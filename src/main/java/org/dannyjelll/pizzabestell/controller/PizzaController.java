@@ -57,7 +57,7 @@ public class PizzaController {
             // Save the updated product list to config.json
             File configFile = new File("src/main/resources/config.json");
             mapper.writeValue(configFile, config);
-
+            productConfig.reloadConfig();
             return ResponseEntity.ok("Produkt erfolgreich hinzugefügt.");
         } catch (IOException e) {
             return ResponseEntity.status(500).body("Fehler beim Hinzufügen des Produkts.");

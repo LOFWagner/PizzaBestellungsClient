@@ -23,4 +23,8 @@ public class ProductConfig {
     public Map<String, Double> getProdukte() {
         return produkte;
     }
+
+    public void reloadConfig() throws IOException {
+        loadConfig();
+    }
 }

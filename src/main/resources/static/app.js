@@ -16,13 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let bestellung = {}; // Tracks product quantities
 
     // Fetch products from the backend
-    fetch("/api/produkte")
-        .then(response => response.json())
-        .then(data => {
-            produkte = data;
-            renderProducts();
-            updateKosten(); // Initial calculation
-        });
+    function fetchProducts() {
+        fetch("/api/produkte")
+            .then(response => response.json())
+            .then(data => {
+                produkte = data;
+                renderProducts();
+                updateKosten(); // Initial calculation
+            });
+    }
+
+    fetchProducts();
 
     // Render product inputs dynamically
     function renderProducts() {
@@ -33,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const container = document.createElement("div");
 
             container.innerHTML = `
-            <label>${produkt} (${price} €): </label>
-            <input type="number" id="product-${sanitizedProdukt}" value="0" min="0" />
-        `;
+        <label>${produkt} (${price} €): </label>
+        <input type="number" id="product-${sanitizedProdukt}" value="0" min="0" />
+    `;
             productsContainer.appendChild(container);
 
             // Initialize bestellung object
@@ -115,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
         productModal.style.display = "none"; // Hide modal
     });
 
-    // Submit new product to backend
     submitProductButton.addEventListener("click", () => {
         const newProductName = productNameInput.value.trim();
         const newProductPrice = parseFloat(productPriceInput.value);
@@ -142,13 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(message => {
                 alert(message); // Show success or error message
                 productModal.style.display = "none"; // Hide modal after submitting
-                // Refresh the product list
-                return fetch("/api/produkte");
-            })
-            .then(response => response.json())
-            .then(data => {
-                produkte = data;
-                renderProducts(); // Re-render product list with the new product
+
+                // Update the local produkte object and re-render the products
+                produkte[newProductName] = newProductPrice;
+                renderProducts();
                 updateKosten(); // Recalculate costs
             })
             .catch(error => {
