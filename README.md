@@ -52,7 +52,7 @@ This project is a service for a pizza ordering application. It allows users to s
 
 1. **Clone the repository**:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/LOFWagner/PizzaBestellungsClient
     cd <repository-directory>
     ```
 
