@@ -67,9 +67,10 @@ public class PizzaController {
     @PostMapping("/abschluss")
     public ResponseEntity<String> abschluss(@RequestBody Bestellung bestellung) {
         // Format the order data into a message string
-        StringBuilder message = new StringBuilder("Wir würden bitte bestellen:\n");
+        StringBuilder message = new StringBuilder("Wir würden gerne bestellen:\n");
         for (Map.Entry<String, Integer> entry : bestellung.getProdukte().entrySet()) {
-            message.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+            String next = entry.getValue() + "x " + entry.getKey()  + "\n";
+            message.append(next);
         }
         message.append("Lieferung bitte an Erzbergerstraße 121, 76133 Karlsruhe\n");
             return ResponseEntity.status(HttpStatus.OK).body(message.toString());
