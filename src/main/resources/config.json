@@ -1,16 +1,1 @@
-{
-  "produkte": {
-    "Margherita": 6.50,
-    "Salami": 7.50,
-    "Hawaii": 8.00,
-    "Quattro Formaggi": 8.50,
-    "Diavolo": 9.00,
-    "BBQ Chicken": 9.50,
-    "Vegetariana": 8.00,
-    "Funghi": 7.50,
-    "Gemüse Deluxe": 8.50,
-    "Veganer Klassiker": 8.00,
-    "Veganer BBQ": 9.00,
-    "Veganer Spinat-Pilz": 9.00
-  }
-}
+{"produkte":{"Margherita":6.5,"Salami":7.5,"Hawaii":8.0,"Quattro Formaggi":8.5,"Diavolo":9.0,"BBQ Chicken":9.5,"Vegetariana":8.0,"Funghi":7.5,"Gemüse Deluxe":8.5,"Veganer Klassiker":8.0,"Veganer BBQ":9.0,"Veganer Spinat-Pilz":9.0}}
