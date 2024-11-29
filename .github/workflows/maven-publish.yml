@@ -50,5 +50,5 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./target/PizzaBestell-${{ steps.get_version.outputs.version }}.jar
-        asset_name: translator-${{ steps.get_version.outputs.version }}.jar
+        asset_name: PizzaBestellung-${{ steps.get_version.outputs.version }}.jar
         asset_content_type: application/java-archive
