@@ -18,7 +18,7 @@ This project is a service for a pizza ordering application. It allows users to s
 - `src/main/resources/static/index.html`: Frontend HTML file for the pizza ordering interface.
 - `src/main/resources/static/style.css`: CSS file for styling the frontend.
 - `src/main/resources/static/app.js`: JavaScript file for handling frontend interactions and communicating with the backend.
-
+- `src/main/resources/config.json` : Stores the available order options
 ## API Endpoints
 
 ### Get Products
